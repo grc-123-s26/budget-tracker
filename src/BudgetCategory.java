@@ -1,3 +1,5 @@
+//partner for this assignment: Kealii
+
 public class BudgetCategory implements Comparable<BudgetCategory> {
     //variables that is needed
     private String product;

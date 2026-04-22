@@ -1,3 +1,5 @@
+//partner for this assignment: Kealii
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
