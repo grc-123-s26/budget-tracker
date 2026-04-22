@@ -38,6 +38,10 @@ public class BudgetApp {
 
         //Print off the budget difference
         System.out.println("\nYour total budget difference: $" + budgetDifference(budgets) + ".00" /*Got lazy sorry*/);
+        
+        //Prints off the average over/under budgets.
+        String avgString = String.format("$%.2f", budgetAverage(budgets));
+        System.out.println("\nYour average over/under budget is: " + avgString);
     }
 
     /**
@@ -59,5 +63,18 @@ public class BudgetApp {
             total += x.getDifference();
         }
         return total;
+    }
+
+    /**
+     * This method returns the average over/under budget across all categories,
+     * this method adds up all values of the budget difference (including negatives)
+     * and divides them by the number of BudgetCategorys.
+     * 
+     * @param b The list of BudgetCategorys.
+     * @return The average over/under budget.
+     */
+    public static double budgetAverage(List<BudgetCategory> b)
+    {
+        return ((double)budgetDifference(b))/(b.size());
     }
 }
