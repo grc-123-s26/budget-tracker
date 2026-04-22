@@ -9,6 +9,10 @@ public class BudgetCategory {
         this.spent = spent;
     }
 
+    public String toString() {
+        return "'" + this.name + "' category:\n" + "Limit: $" + this.limit + "\nSpent: $" + this.spent;
+    }
+
     public String getName() {
         return this.name;
     }
