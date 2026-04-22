@@ -28,6 +28,8 @@ public class BudgetApp {
             String spentString = String.format("$%.2f", spent);
 
         }
+
+        System.out.println(sheet);
     }
 
     /**
