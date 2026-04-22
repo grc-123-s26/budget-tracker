@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Collections;
 
 public class BudgetApp {
     public static void main(String[] args) {
@@ -23,6 +24,8 @@ public class BudgetApp {
             allCategories.add(new BudgetCategory(category, limit, spent));
             
         }
+        Collections.sort(allCategories);
+
         System.out.println(allCategories);
     }
 
