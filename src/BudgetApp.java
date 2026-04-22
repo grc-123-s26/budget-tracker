@@ -19,6 +19,9 @@ public class BudgetApp {
             System.out.println("The budget limit for " + category + " was: " + limitString + 
                                " but the actual spend was " + spentString);
         }
+
+        BudgetCategory groceries = new BudgetCategory("Groceries", 500, 401);
+        System.out.println(groceries);
     }
 
     /**
