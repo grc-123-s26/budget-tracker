@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -29,6 +30,7 @@ public class BudgetApp {
 
         }
 
+        Collections.sort(sheet, Collections.reverseOrder());
         System.out.println(sheet);
     }
 
