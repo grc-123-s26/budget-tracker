@@ -3,7 +3,11 @@ import java.util.Scanner;
 
 public class BudgetApp {
     public static void main(String[] args) {
+       
         Scanner scan = new Scanner(System.in);
+
+         BudgetCategory nails = new BudgetCategory("Nails", 75, 90);
+         System.out.println(nails);
 
         while(scan.hasNextLine()) {
             String category = scan.nextLine();
