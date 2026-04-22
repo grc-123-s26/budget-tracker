@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class BudgetApp {
     public static void main(String[] args) {
@@ -26,6 +27,7 @@ public class BudgetApp {
         }
 
         //BudgetCategory groceries = new BudgetCategory("Groceries", 500, 401);
+        Collections.sort(budgets);
         for(BudgetCategory x : budgets)
         {
             System.out.println(x);
