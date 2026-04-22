@@ -46,11 +46,11 @@ public class BudgetApp {
      * @param categories the budget categories with the spend
      * @return the total amount over/under budget
      */
-    public static int budgetDifference(List<BudgetCategory> categories) {
+    public static double budgetDifference(List<BudgetCategory> categories) {
         // TODO: You will implement this method in Wave 4
         // Note that this method SHOULD NOT have a print statement.
         // It should instead return the value.
-        int budget = 0;
+        double budget = 0;
 
         for(BudgetCategory category : categories) {
             budget += category.getDifference();
@@ -59,14 +59,11 @@ public class BudgetApp {
         return budget;
     }
 
-    //ascii bar chart. NOT FINISHED YET!!!
-        public static int budgetsLocated(List<BudgetCategory> categories) {
-        int budget = 0;
 
-        for(BudgetCategory category : categories) {
-            budget += category.getDifference();
-        }
+    //no longer doing the ASCII Chart, i am doing the average over/under budget.
+    public static double averageDifference(List<BudgetCategory> categories) {
+        double total = budgetDifference(categories);
 
-        return budget;
+        return total / categories.size();
     }
 }
