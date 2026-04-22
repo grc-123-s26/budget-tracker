@@ -27,6 +27,12 @@ public class BudgetApp {
         Collections.sort(allCategories);
 
         System.out.println(allCategories);
+
+        System.out.println();
+
+        Collections.sort(allCategories, Collections.reverseOrder());
+
+        System.out.println(allCategories);
     }
 
     /**
@@ -45,6 +51,11 @@ public class BudgetApp {
         // TODO: You will implement this method in Wave 4
         // Note that this method SHOULD NOT have a print statement.
         // It should instead return the value.
-        return -1;
+        int difference = 0;
+        for (BudgetCategory c : categories) {
+            difference += c.getDifference();
+        }
+        
+        return difference;
     }
 }
