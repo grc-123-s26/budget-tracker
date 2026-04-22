@@ -32,6 +32,15 @@ public class BudgetApp {
 
         Collections.sort(sheet, Collections.reverseOrder());
         System.out.println(sheet);
+
+
+        //get the difference if over or under the budget.
+        double diff = budgetDifference(sheet);
+        System.out.println("Total over/under budget: " + diff);
+
+        //get the average
+        double avg = averageDifference(sheet);
+        System.out.println("Average over/under the budget per category: " + avg);
     }
 
     /**

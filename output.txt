@@ -1,0 +1,3 @@
+[BudgetCategory [product=Dining Out, expectedCost=120.0, trueCost=185.0], BudgetCategory [product=Entertainment, expectedCost=80.0, trueCost=115.0], BudgetCategory [product=Utilities, expectedCost=150.0, trueCost=165.0], BudgetCategory [product=Rent, expectedCost=1350.0, trueCost=1350.0], BudgetCategory [product=Transportation, expectedCost=200.0, trueCost=190.0], BudgetCategory [product=Groceries, expectedCost=400.0, trueCost=375.0]]
+Total over/under budget: 80.0
+Average over/under the budget per category: 13.333333333333334
