@@ -58,4 +58,15 @@ public class BudgetApp {
 
         return budget;
     }
+
+    //ascii bar chart. NOT FINISHED YET!!!
+        public static int budgetsLocated(List<BudgetCategory> categories) {
+        int budget = 0;
+
+        for(BudgetCategory category : categories) {
+            budget += category.getDifference();
+        }
+
+        return budget;
+    }
 }
