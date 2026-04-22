@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class BudgetApp {
     public static void main(String[] args) {
@@ -29,6 +30,9 @@ public class BudgetApp {
         for(int i=0; i<tracker.size(); i++){
             System.out.println(tracker.get(i));
         }
+
+        Collections.sort(tracker);
+        System.out.println(tracker);
     }
 
     /**
