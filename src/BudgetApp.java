@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -5,7 +6,11 @@ public class BudgetApp {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        BudgetCategory rent = new BudgetCategory("rent", 1400.00, 1600.00);
+        //BudgetCategory rent = new BudgetCategory("rent", 1400.00, 1600.00);
+        List<BudgetCategory> sheet = new ArrayList<>();
+
+
+        
 
         while(scan.hasNextLine()) {
             String category = scan.nextLine();
@@ -13,13 +18,15 @@ public class BudgetApp {
             double limit = scan.nextDouble();
             double spent = scan.nextDouble();
 
+
+            sheet.add(new BudgetCategory(category, limit, spent)); //adds new object to your list.
+
             // Consume \n after spent input 
             if(scan.hasNextLine()) scan.nextLine();
 
             String limitString = String.format("$%.2f", limit);
             String spentString = String.format("$%.2f", spent);
-            System.out.println("The budget limit for " + category + " was: " + limitString + 
-                               " but the actual spend was " + spentString);
+
         }
     }
 
