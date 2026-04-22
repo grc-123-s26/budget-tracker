@@ -4,8 +4,13 @@ import java.util.Scanner;
 public class BudgetApp {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        BudgetCategory concerts = new BudgetCategory("Concerts", 200.0, 400.0);
+        System.out.println(concerts);
+        System.out.println(concerts.getName());
+        System.out.println(concerts.getLimit());
+        System.out.println(concerts.getSpent());
 
-        while(scan.hasNextLine()) {
+        /*while(scan.hasNextLine()) {
             String category = scan.nextLine();
 
             double limit = scan.nextDouble();
@@ -18,7 +23,7 @@ public class BudgetApp {
             String spentString = String.format("$%.2f", spent);
             System.out.println("The budget limit for " + category + " was: " + limitString + 
                                " but the actual spend was " + spentString);
-        }
+        }*/
     }
 
     /**
