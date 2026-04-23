@@ -1,0 +1,9 @@
+[Category = Dining Out Limit = 120.0 Spent = 185.0, Category = Entertainment Limit = 80.0 Spent = 115.0, Category = Utilities Limit = 150.0 Spent = 165.0, Category = Rent Limit = 1350.0 Spent = 1350.0, Category = Transportation Limit = 200.0 Spent = 190.0, Category = Groceries Limit = 400.0 Spent = 375.0]
+Dining Out
+Entertainment
+Utilities
+Rent
+Transportation
+Groceries
+total difference = 80
+Average Differnece = 13.33
