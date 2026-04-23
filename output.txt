@@ -1,0 +1,59 @@
+BudgetCategory  
+name= Groceries
+limit= 400.0
+spent= 375.0
+difference= 25.0
+
+BudgetCategory  
+name= Transportation
+limit= 200.0
+spent= 190.0
+difference= 10.0
+
+BudgetCategory  
+name= Rent
+limit= 1350.0
+spent= 1350.0
+difference= 0.0
+
+BudgetCategory  
+name= Utilities
+limit= 150.0
+spent= 165.0
+difference= -15.0
+
+BudgetCategory  
+name= Entertainment
+limit= 80.0
+spent= 115.0
+difference= -35.0
+
+BudgetCategory  
+name= Dining Out
+limit= 120.0
+spent= 185.0
+difference= -65.0
+
+budget difference:
+-80
+
+Comparative Report
+********************
+Groceries:
+6% Under Budget
+********************
+Transportation:
+5% Under Budget
+********************
+Rent:
+0% Under Budget
+********************
+Utilities:
+10% Over Budget
+********************
+Entertainment:
+43% Over Budget
+********************
+Dining Out:
+54% Over Budget
+
