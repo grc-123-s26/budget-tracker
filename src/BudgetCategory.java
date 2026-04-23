@@ -22,4 +22,10 @@ public class BudgetCategory implements Comparable<BudgetCategory>{
     public String getName(){
         return name; 
     }
+    public double getLimit(){
+        return limit;
+    }
+    public double getSpent(){
+        return spent; 
+    }
 }
