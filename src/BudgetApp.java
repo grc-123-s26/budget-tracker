@@ -29,7 +29,8 @@ public class BudgetApp {
             double limit = scan.nextDouble();
             double spent = scan.nextDouble();
 
-            //class TA helped me build out this logic through 15 minutes of chatting            
+            //class TA helped me build out this logic through 15 minutes of chatting
+            //to my understanding this is making the "addresses" for these instances of BC be the list.get(index)            
             list.add(new BudgetCategory(category, limit, spent));
 
             if(scan.hasNextLine()) scan.nextLine();
@@ -48,8 +49,10 @@ public class BudgetApp {
         // BudgetCategory groceries = new BudgetCategory("Groceries", 500, 401);
         // String testingTesting = groceries.toString();
         // System.out.println(testingTesting);
-
+        System.out.println("budget difference:");
         System.out.println(budgetDifference(list));
+
+        System.out.println(overUnderCompare(list));
 
 
     }
@@ -72,5 +75,34 @@ public class BudgetApp {
             diff += (int) cat.getDifference(); //casting to remove decimals and become int
         }
         return diff;
+    }
+
+    /**
+     * The goal for this method is to create a finances report
+     * the report will detail what percent over and under the user was in each category
+     * @param categories the arraylist of categories with category, limit, spent and diff
+     * @return a String report that neatly shows the info
+     */
+    public static String overUnderCompare(List<BudgetCategory> categories) {
+        String returnString = "\nComparative Report\n";
+        double calc = 0.00;
+        boolean overBudget = false;
+        
+        for (BudgetCategory cat : categories) {
+            if (cat.getDifference() < 0) {
+                overBudget = true;
+            } else {overBudget = false;}
+            returnString += "*".repeat(20);
+            returnString += "\n";
+            returnString += cat.getName() + ":\n";
+            calc = cat.getSpent() / cat.getLimit() * 100;
+
+            if(overBudget) { //percentages were getting weird so i made them ints
+                returnString += (int)(calc - 100) + "% Over Budget\n";
+            } else {
+                returnString += (int)(100 - calc) + "% Under Budget\n";
+            }
+        }
+        return returnString;
     }
 }
