@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,7 +15,8 @@ public class BudgetApp {
 
          //List<Double> moneySpent= new ArrayList<>();
          List <BudgetCategory> categories = new ArrayList<>();
-         //List <Double> budget = new ArrayList<>();
+         List <Double> budget = new ArrayList<>();
+         List <Double> moneySpent = new ArrayList<>();
          
         while(scan.hasNextLine()) {
             String category = scan.nextLine();
@@ -38,7 +40,10 @@ public class BudgetApp {
         }
 
         //System.out.println(budget);
+        
+        Collections.sort(categories);
         System.out.println(categories);
+
     }
 
     /**
