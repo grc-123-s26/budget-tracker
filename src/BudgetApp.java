@@ -1,4 +1,6 @@
+import java.text.CollationElementIterator;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,6 +28,7 @@ public class BudgetApp {
             //System.out.println("The budget limit for " + category + " was: " + limitString + " but the actual spend was " + spentString);
         }
         
+        Collections.sort(categories);
         System.out.println(categories);
     }
 
