@@ -45,7 +45,9 @@ public class BudgetApp {
         System.out.println(categories);
 
        int difference = budgetDifference(categories);
-        System.out.println(difference);
+
+       
+        System.out.println("Overall over/under budget amount: $" + difference);
 
     }
 
@@ -70,6 +72,8 @@ public class BudgetApp {
         for (BudgetCategory category : categories) {
             total += category.getSpent() - category.getLimit();
         }
+        double tot = total/categories.size();
+        System.out.println("The average over/under $" + tot);
         return total;
     }
     
