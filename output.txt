@@ -1,0 +1,3 @@
+[BudgetCategory [catagory=Dining Out, spent=185.0, limit=120.0], BudgetCategory [catagory=Entertainment, spent=115.0, limit=80.0], BudgetCategory [catagory=Utilities, spent=165.0, limit=150.0], BudgetCategory [catagory=Rent, spent=1350.0, limit=1350.0], BudgetCategory [catagory=Transportation, spent=190.0, limit=200.0], BudgetCategory [catagory=Groceries, spent=375.0, limit=400.0]]
+Total difference: 80
+Average difference: 13.0
