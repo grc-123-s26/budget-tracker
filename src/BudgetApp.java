@@ -33,6 +33,9 @@ public class BudgetApp {
 
         int difference = budgetDifference(categories);
         System.out.println("Total difference: " + difference);
+
+        double average = averageDifference(categories);
+        System.out.println("Average difference: " + average);
     }
 
     /**
@@ -48,14 +51,18 @@ public class BudgetApp {
      * @return the total amount over/under budget
      */
     public static int budgetDifference(List<BudgetCategory> categories) {
+        // TODO: You will implement this method in Wave 4
+        // Note that this method SHOULD NOT have a print statement.
+        // It should instead return the value.
         int total = 0;
 
         for (BudgetCategory category : categories) {
             total += category.getSpent() - category.getLimit();
         }
-        // TODO: You will implement this method in Wave 4
-        // Note that this method SHOULD NOT have a print statement.
-        // It should instead return the value.
         return total;
+    }
+
+    public static int averageDifference(List<BudgetCategory> categories) {
+        return (int) budgetDifference(categories) / categories.size();
     }
 }
