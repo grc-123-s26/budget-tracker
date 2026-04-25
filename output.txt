@@ -1,0 +1,3 @@
+[BudgetCategory    category:Dining Out limit: $120.0 spent: $185.0, BudgetCategory    category:Entertainment limit: $80.0 spent: $115.0, BudgetCategory    category:Utilities limit: $150.0 spent: $165.0, BudgetCategory    category:Rent limit: $1350.0 spent: $1350.0, BudgetCategory    category:Transportation limit: $200.0 spent: $190.0, BudgetCategory    category:Groceries limit: $400.0 spent: $375.0]
+The average over/under $13.0
+Overall over/under budget amount: $80

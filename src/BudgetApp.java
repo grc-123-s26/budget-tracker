@@ -1,24 +1,54 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class BudgetApp {
     public static void main(String[] args) {
+       
         Scanner scan = new Scanner(System.in);
 
+
+
+         //BudgetCategory nails = new BudgetCategory("Nails", 75, 90);
+         //System.out.println(nails);
+
+         //List<Double> moneySpent= new ArrayList<>();
+         List <BudgetCategory> categories = new ArrayList<>();
+         //List <Double> budget = new ArrayList<>();
+        // List <Double> moneySpent = new ArrayList<>();
+         
         while(scan.hasNextLine()) {
             String category = scan.nextLine();
 
             double limit = scan.nextDouble();
+
             double spent = scan.nextDouble();
+
+            //budget.add(limit);
+            //categories.add(category);
+
+            categories.add(new BudgetCategory(category, limit, spent));
 
             // Consume \n after spent input 
             if(scan.hasNextLine()) scan.nextLine();
 
-            String limitString = String.format("$%.2f", limit);
+            /*  String limitString = String.format("$%.2f", limit);
             String spentString = String.format("$%.2f", spent);
             System.out.println("The budget limit for " + category + " was: " + limitString + 
-                               " but the actual spend was " + spentString);
+                               " but the actual spend was " + spentString);*/
         }
+
+        //System.out.println(budget);
+        
+        Collections.sort(categories,Collections.reverseOrder());
+        System.out.println(categories);
+
+       int difference = budgetDifference(categories);
+
+       
+        System.out.println("Overall over/under budget amount: $" + difference);
+
     }
 
     /**
@@ -37,6 +67,14 @@ public class BudgetApp {
         // TODO: You will implement this method in Wave 4
         // Note that this method SHOULD NOT have a print statement.
         // It should instead return the value.
-        return -1;
+      int total = 0;
+
+        for (BudgetCategory category : categories) {
+            total += category.getSpent() - category.getLimit();
+        }
+        double tot = total/categories.size();
+        System.out.println("The average over/under $" + tot);
+        return total;
     }
+    
 }
