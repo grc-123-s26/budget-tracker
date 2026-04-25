@@ -15,8 +15,8 @@ public class BudgetApp {
 
          //List<Double> moneySpent= new ArrayList<>();
          List <BudgetCategory> categories = new ArrayList<>();
-         List <Double> budget = new ArrayList<>();
-         List <Double> moneySpent = new ArrayList<>();
+         //List <Double> budget = new ArrayList<>();
+        // List <Double> moneySpent = new ArrayList<>();
          
         while(scan.hasNextLine()) {
             String category = scan.nextLine();
@@ -41,8 +41,11 @@ public class BudgetApp {
 
         //System.out.println(budget);
         
-        Collections.sort(categories);
+        Collections.sort(categories,Collections.reverseOrder());
         System.out.println(categories);
+
+       int difference = budgetDifference(categories);
+        System.out.println(difference);
 
     }
 
@@ -62,6 +65,12 @@ public class BudgetApp {
         // TODO: You will implement this method in Wave 4
         // Note that this method SHOULD NOT have a print statement.
         // It should instead return the value.
-        return -1;
+      int total = 0;
+
+        for (BudgetCategory category : categories) {
+            total += category.getSpent() - category.getLimit();
+        }
+        return total;
     }
+    
 }

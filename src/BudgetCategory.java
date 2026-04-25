@@ -38,9 +38,9 @@ public class BudgetCategory implements Comparable<BudgetCategory>{
        double thisDifference = limit - spent;
         double otherDifference = other.limit - other.spent;
 
-        if (thisDifference < otherDifference) {
+        if (thisDifference > otherDifference) {
             return -1;
-        } else if (thisDifference > otherDifference) {
+        } else if (thisDifference < otherDifference) {
             return 1;
         } else {
             return 0;
