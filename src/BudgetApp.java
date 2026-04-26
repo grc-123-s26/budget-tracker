@@ -1,9 +1,12 @@
 import java.util.List;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class BudgetApp {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        List<BudgetCategory> budgets = new ArrayList<>();
 
         while(scan.hasNextLine()) {
             String category = scan.nextLine();
@@ -13,12 +16,32 @@ public class BudgetApp {
 
             // Consume \n after spent input 
             if(scan.hasNextLine()) scan.nextLine();
-
+            
+            /* 
             String limitString = String.format("$%.2f", limit);
             String spentString = String.format("$%.2f", spent);
             System.out.println("The budget limit for " + category + " was: " + limitString + 
                                " but the actual spend was " + spentString);
+            */
+            budgets.add(new BudgetCategory(category, limit, spent));
         }
+        
+        //For testing
+        //BudgetCategory groceries = new BudgetCategory("Groceries", 500, 401);
+
+        //Sort and print off the list of BudgetCategorys
+        Collections.sort(budgets, Collections.reverseOrder());
+        for(BudgetCategory x : budgets)
+        {
+            System.out.println(x);
+        }
+
+        //Print off the budget difference
+        System.out.println("\nYour total budget difference: $" + budgetDifference(budgets) + ".00" /*Got lazy sorry*/);
+        
+        //Prints off the average over/under budgets.
+        String avgString = String.format("$%.2f", budgetAverage(budgets));
+        System.out.println("\nYour average over/under budget is: " + avgString);
     }
 
     /**
@@ -34,9 +57,24 @@ public class BudgetApp {
      * @return the total amount over/under budget
      */
     public static int budgetDifference(List<BudgetCategory> categories) {
-        // TODO: You will implement this method in Wave 4
-        // Note that this method SHOULD NOT have a print statement.
-        // It should instead return the value.
-        return -1;
+        int total = 0;
+        for(BudgetCategory x : categories)
+        {
+            total += x.getDifference();
+        }
+        return total;
+    }
+
+    /**
+     * This method returns the average over/under budget across all categories,
+     * this method adds up all values of the budget difference (including negatives)
+     * and divides them by the number of BudgetCategorys.
+     * 
+     * @param b The list of BudgetCategorys.
+     * @return The average over/under budget.
+     */
+    public static double budgetAverage(List<BudgetCategory> b)
+    {
+        return ((double)budgetDifference(b))/(b.size());
     }
 }
