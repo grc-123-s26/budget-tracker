@@ -1,9 +1,14 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class BudgetApp {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        // BudgetCategory groceries = new BudgetCategory("Groceries", 500, 401);
+        // System.out.println(groceries);
+        List<BudgetCategory> allCategories = new ArrayList<>();
 
         while(scan.hasNextLine()) {
             String category = scan.nextLine();
@@ -14,11 +19,13 @@ public class BudgetApp {
             // Consume \n after spent input 
             if(scan.hasNextLine()) scan.nextLine();
 
-            String limitString = String.format("$%.2f", limit);
-            String spentString = String.format("$%.2f", spent);
-            System.out.println("The budget limit for " + category + " was: " + limitString + 
-                               " but the actual spend was " + spentString);
+            allCategories.add(new BudgetCategory(category, limit, spent));
         }
+
+        //System.out.println(allCategories);
+        Collections.sort(allCategories);
+        System.out.println(allCategories);
+        System.out.println(getPrecentege(allCategories));
     }
 
     /**
@@ -37,6 +44,22 @@ public class BudgetApp {
         // TODO: You will implement this method in Wave 4
         // Note that this method SHOULD NOT have a print statement.
         // It should instead return the value.
-        return -1;
+        int difference = 0; 
+        for(BudgetCategory category : categories){
+            difference += category.getDifference();
+        }
+        return difference;
     }
+
+    public static String getPrecentege(List<BudgetCategory> categories){
+        double percent = 0.0;
+        for(BudgetCategory c : categories){
+            if(c.getDifference() < 0){
+                percent += 1;
+            }
+        }
+        percent = percent / categories.size() * 100;
+        return "There is: " + percent + "% over";
+    }
+
 }
