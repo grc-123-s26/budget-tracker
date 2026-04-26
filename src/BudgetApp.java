@@ -70,6 +70,6 @@ public class BudgetApp {
         }
         String percentage = over / categories.size() * 100 + "%";
 
-        return "The percentage that budget has gone over is " + percentage;
+        return "The percent that budget has gone over is " + percentage;
     }
 }
