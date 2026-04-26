@@ -64,7 +64,7 @@ public class BudgetApp {
     public static String overPercent(List<BudgetCategory> categories) {
         double over = 0;
         for (BudgetCategory c : categories) {
-            if (c.getDifference() <= 0) {
+            if (c.getDifference() < 0) {
                 over += 1;
             }
         }
