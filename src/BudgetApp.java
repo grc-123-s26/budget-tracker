@@ -54,7 +54,7 @@ public class BudgetApp {
     public static String getPrecentege(List<BudgetCategory> categories){
         double percent = 0.0;
         for(BudgetCategory c : categories){
-            if(c.getDifference() <= 0){
+            if(c.getDifference() < 0){
                 percent += 1;
             }
         }
