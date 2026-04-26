@@ -33,6 +33,8 @@ public class BudgetApp {
         Collections.sort(allCategories, Collections.reverseOrder());
 
         System.out.println(allCategories);
+
+        System.out.println(overPercent(allCategories));
     }
 
     /**
@@ -57,5 +59,17 @@ public class BudgetApp {
         }
         
         return difference;
+    }
+
+    public static String overPercent(List<BudgetCategory> categories) {
+        double over = 0;
+        for (BudgetCategory c : categories) {
+            if (c.getDifference() <= 0) {
+                over += 1;
+            }
+        }
+        String percentage = over / categories.size() * 100 + "%";
+
+        return "The percentage that budget has gone over is " + percentage;
     }
 }
