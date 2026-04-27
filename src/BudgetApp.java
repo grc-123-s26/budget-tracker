@@ -23,6 +23,8 @@ public class BudgetApp {
         }
         Collections.sort(categories);
         System.out.println(categories);
+        int difference = budgetDifference(categories);
+        System.out.println("Total difference is " + difference);
     }
 
     /**
