@@ -1,0 +1,14 @@
+The budget limit for Rent was: $1350.0 but the actual spent was $1350.0
+The budget limit for Groceries was: $400.0 but the actual spent was $375.0
+The budget limit for Dining Out was: $120.0 but the actual spent was $185.0
+The budget limit for Transportation was: $200.0 but the actual spent was $190.0
+The budget limit for Entertainment was: $80.0 but the actual spent was $115.0
+The budget limit for Utilities was: $150.0 but the actual spent was $165.0
+[The budget limit for Groceries was: $400.0 but the actual spent was $375.0, The budget limit for Transportation was: $200.0 but the actual spent was $190.0, The budget limit for Rent was: $1350.0 but the actual spent was $1350.0, The budget limit for Utilities was: $150.0 but the actual spent was $165.0, The budget limit for Entertainment was: $80.0 but the actual spent was $115.0, The budget limit for Dining Out was: $120.0 but the actual spent was $185.0]
+[The budget limit for Dining Out was: $120.0 but the actual spent was $185.0, The budget limit for Entertainment was: $80.0 but the actual spent was $115.0, The budget limit for Utilities was: $150.0 but the actual spent was $165.0, The budget limit for Rent was: $1350.0 but the actual spent was $1350.0, The budget limit for Transportation was: $200.0 but the actual spent was $190.0, The budget limit for Groceries was: $400.0 but the actual spent was $375.0]
+Dining Out: | ******************
+Entertainment: | ***********
+Utilities: | ****************
+Rent: | ***************************************************************************************************************************************
+Transportation: | *******************
+Groceries: | *************************************
