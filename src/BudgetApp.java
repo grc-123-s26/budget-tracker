@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -19,10 +20,9 @@ public class BudgetApp {
             // Consume \n after spent input 
             if(scan.hasNextLine()) scan.nextLine();
 
-            //String limitString = String.format("$%.2f", limit);
-            //String spentString = String.format("$%.2f", spent);
         }
-       System.out.println(categories);
+        Collections.sort(categories);
+        System.out.println(categories);
     }
 
     /**
