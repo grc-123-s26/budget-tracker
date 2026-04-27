@@ -36,6 +36,8 @@ public class BudgetApp {
 
         Collections.sort(tracker, Collections.reverseOrder());
         System.out.println(tracker);
+
+        printASCIIChart(tracker);
     }
 
     /**
@@ -62,4 +64,21 @@ public class BudgetApp {
         }
         return (int) total;
     }
+
+
+    //Wave 6: method ASCII Chart
+    public static void printASCIIChart(List<BudgetCategory> categories) {
+    for (int i = 0; i<categories.size(); i++) {
+        BudgetCategory cat = categories.get(i);
+        System.out.print(cat.getName() + ": | ");
+
+        int stars = (int) (cat.getSpent()/10);
+
+        for (int j = 0; j<stars; j++) {
+            System.out.print("*");
+        }
+
+        System.out.println();
+    }
+}
 }
