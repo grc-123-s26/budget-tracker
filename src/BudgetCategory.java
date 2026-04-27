@@ -25,13 +25,13 @@ public class BudgetCategory implements Comparable<BudgetCategory>{
         return this.spent;
     }
 
-    public double getDifference() {
-        return this.limit - this.spent;
+    public int getDifference() {
+        return (int)(this.limit - this.spent);
     }
     
     public int compareTo(BudgetCategory other) {
-        double thisDifference = this.getDifference();
-        double otherDifference = other.getDifference();
+        int thisDifference = this.getDifference();
+        int otherDifference = other.getDifference();
 
         if (thisDifference < otherDifference) {
             return -1;
