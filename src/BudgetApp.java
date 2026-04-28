@@ -31,6 +31,19 @@ public class BudgetApp {
         System.out.println("Total difference is " + difference);
     }
 
+    public static String budgetDifferencePercentageString(BudgetCategory category) {
+        double differencePercentage = (category.getDifference() / category.getLimit()) * 100;
+        String budgetStatus = "";
+        if (differencePercentage < 0) {
+            budgetStatus = "over";
+            differencePercentage = Math.abs(differencePercentage);
+        } else if (differencePercentage > 0) {
+            budgetStatus = "under";
+        } else {
+            return "Budget met";
+        }
+    }
+
     /**
      * Returns overall how much over/under budget a person is given a list of their
      * categories.
