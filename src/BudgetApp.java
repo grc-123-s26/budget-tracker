@@ -1,24 +1,49 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class BudgetApp {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        ArrayList<BudgetCategory> categories = new ArrayList<>();
+        
 
         while(scan.hasNextLine()) {
-            String category = scan.nextLine();
+            String name = scan.nextLine();
 
             double limit = scan.nextDouble();
             double spent = scan.nextDouble();
+            
+            BudgetCategory category = new BudgetCategory(name, limit, spent);
+            category.getLimit();
+            categories.add(category);
 
             // Consume \n after spent input 
             if(scan.hasNextLine()) scan.nextLine();
 
-            String limitString = String.format("$%.2f", limit);
-            String spentString = String.format("$%.2f", spent);
-            System.out.println("The budget limit for " + category + " was: " + limitString + 
-                               " but the actual spend was " + spentString);
         }
+        Collections.sort(categories);
+        for (BudgetCategory category : categories) {
+            System.out.println(category.toString() + "\n" + budgetDifferencePercentageString(category) + "\n");
+        }
+        int difference = budgetDifference(categories);
+        System.out.println("Total difference is " + difference);
+    }
+
+    public static String budgetDifferencePercentageString(BudgetCategory category) {
+        double differencePercentage = (category.getDifference() / category.getLimit()) * 100;
+        String budgetStatus = "";
+        if (differencePercentage < 0) {
+            budgetStatus = "% over";
+            differencePercentage = Math.abs(differencePercentage);
+        } else if (differencePercentage > 0) {
+            budgetStatus = "% under";
+        } else {
+            return "Budget met";
+        }
+        String truncatedDifferencePercentage = String.format("%.2f", differencePercentage);
+        return truncatedDifferencePercentage + budgetStatus + " budget";
     }
 
     /**
@@ -34,9 +59,10 @@ public class BudgetApp {
      * @return the total amount over/under budget
      */
     public static int budgetDifference(List<BudgetCategory> categories) {
-        // TODO: You will implement this method in Wave 4
-        // Note that this method SHOULD NOT have a print statement.
-        // It should instead return the value.
-        return -1;
+        int totalDifference = 0;
+        for (BudgetCategory category : categories) {
+            totalDifference += category.getDifference();
+        }
+        return totalDifference;
     }
 }
