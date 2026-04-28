@@ -35,10 +35,10 @@ public class BudgetApp {
         double differencePercentage = (category.getDifference() / category.getLimit()) * 100;
         String budgetStatus = "";
         if (differencePercentage < 0) {
-            budgetStatus = "over";
+            budgetStatus = "% over";
             differencePercentage = Math.abs(differencePercentage);
         } else if (differencePercentage > 0) {
-            budgetStatus = "under";
+            budgetStatus = "% under";
         } else {
             return "Budget met";
         }
