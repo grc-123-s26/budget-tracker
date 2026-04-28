@@ -7,6 +7,7 @@ public class BudgetApp {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         ArrayList<BudgetCategory> categories = new ArrayList<>();
+        
 
         while(scan.hasNextLine()) {
             String name = scan.nextLine();
@@ -15,6 +16,7 @@ public class BudgetApp {
             double spent = scan.nextDouble();
             
             BudgetCategory category = new BudgetCategory(name, limit, spent);
+            category.getLimit();
             categories.add(category);
 
             // Consume \n after spent input 
@@ -22,7 +24,9 @@ public class BudgetApp {
 
         }
         Collections.sort(categories);
-        System.out.println(categories);
+        for (BudgetCategory category : categories) {
+            System.out.println(category.toString() + "\n" + budgetDifferencePercentageString(category));
+        }
         int difference = budgetDifference(categories);
         System.out.println("Total difference is " + difference);
     }
