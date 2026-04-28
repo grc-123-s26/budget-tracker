@@ -25,7 +25,7 @@ public class BudgetApp {
         }
         Collections.sort(categories);
         for (BudgetCategory category : categories) {
-            System.out.println(category.toString() + "\n" + budgetDifferencePercentageString(category));
+            System.out.println(category.toString() + "\n" + budgetDifferencePercentageString(category) + "\n");
         }
         int difference = budgetDifference(categories);
         System.out.println("Total difference is " + difference);
