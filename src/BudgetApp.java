@@ -42,6 +42,8 @@ public class BudgetApp {
         } else {
             return "Budget met";
         }
+        String truncatedDifferencePercentage = String.format("%.2f", differencePercentage);
+        return truncatedDifferencePercentage + budgetStatus + " budget";
     }
 
     /**
