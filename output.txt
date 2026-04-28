@@ -1,0 +1,31 @@
+'Dining Out' category:
+Limit: $120.0
+Spent: $185.0
+54.17% over budget
+
+'Entertainment' category:
+Limit: $80.0
+Spent: $115.0
+43.75% over budget
+
+'Utilities' category:
+Limit: $150.0
+Spent: $165.0
+10.00% over budget
+
+'Rent' category:
+Limit: $1350.0
+Spent: $1350.0
+Budget met
+
+'Transportation' category:
+Limit: $200.0
+Spent: $190.0
+5.00% under budget
+
+'Groceries' category:
+Limit: $400.0
+Spent: $375.0
+6.25% under budget
+
+Total difference is -80
