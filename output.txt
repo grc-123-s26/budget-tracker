@@ -1,0 +1,13 @@
+The budget limit for Dining Out was: $120.0 but the actual spend was $185.0
+The budget limit for Entertainment was: $80.0 but the actual spend was $115.0
+The budget limit for Utilities was: $150.0 but the actual spend was $165.0
+The budget limit for Rent was: $1350.0 but the actual spend was $1350.0
+The budget limit for Transportation was: $200.0 but the actual spend was $190.0
+The budget limit for Groceries was: $400.0 but the actual spend was $375.0
+Difference: $65.0
+Difference: $35.0
+Difference: $15.0
+Difference: $0.0
+Difference: $-10.0
+Difference: $-25.0
+Average over/under budget: $13.333333333333334

@@ -48,10 +48,23 @@ public class BudgetApp {
 
     for (BudgetCategory bc : categories) 
     {
-        
+
     System.out.println("Difference: $" + bc.budgetDifference());
     }
+
+
+    double totalDifference = 0.0;
+
+    for (BudgetCategory bc : categories)
+    {
+    totalDifference += bc.budgetDifference();
     }
+
+    double averageDifference = totalDifference / categories.size();
+
+    System.out.println("Average over/under budget: $" + averageDifference);
+
+}
 
 
     /**
