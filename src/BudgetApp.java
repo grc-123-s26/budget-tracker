@@ -40,7 +40,7 @@ public class BudgetApp {
             System.out.println(bc);
         }
     }
-}
+
 
     /**
      * Returns overall how much over/under budget a person is given a list of their
