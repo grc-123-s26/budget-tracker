@@ -1,10 +1,26 @@
 import java.util.List;
+import java.util.ArrayList; 
+import java.util.Collections;
 import java.util.Scanner;
 
 public class BudgetApp {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in); 
 
+        //comment out wavw 1 code
+        /*
+        BudgetCategory groceries = new BudgetCategory("Groceries", 500, 401);
+
+        System.out.println(groceries.getName());
+        System.out.println(groceries.getBudgetLimit());
+        System.out.println(groceries.getActualSpend());
+        System.out.println(groceries);
+        */
+
+        //create list
+        List<BudgetCategory> categories = new ArrayList<>();
+
+        
         while(scan.hasNextLine()) {
             String category = scan.nextLine();
 
@@ -14,12 +30,42 @@ public class BudgetApp {
             // Consume \n after spent input 
             if(scan.hasNextLine()) scan.nextLine();
 
-            String limitString = String.format("$%.2f", limit);
-            String spentString = String.format("$%.2f", spent);
-            System.out.println("The budget limit for " + category + " was: " + limitString + 
-                               " but the actual spend was " + spentString);
+            //remove print statement
+            // create object, add to list
+            BudgetCategory bc = new BudgetCategory(category, limit, spent);
+            categories.add(bc);
         }
+
+        Collections.sort(categories, Collections.reverseOrder());
+
+        //print after loop
+        for (BudgetCategory bc : categories) 
+         {
+            System.out.println(bc);
+
+        }
+
+
+    for (BudgetCategory bc : categories) 
+    {
+
+    System.out.println("Difference: $" + bc.budgetDifference());
     }
+
+
+    double totalDifference = 0.0;
+
+    for (BudgetCategory bc : categories)
+    {
+    totalDifference += bc.budgetDifference();
+    }
+
+    double averageDifference = totalDifference / categories.size();
+
+    System.out.println("Average over/under budget: $" + averageDifference);
+
+}
+
 
     /**
      * Returns overall how much over/under budget a person is given a list of their
