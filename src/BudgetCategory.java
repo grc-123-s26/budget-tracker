@@ -40,4 +40,9 @@ public class BudgetCategory implements Comparable<BudgetCategory> {
         return Double.compare(thisDiff, otherDiff);
     }
 
+    public double budgetDifference() 
+    {
+    return actualSpend - budgetLimit;
+    
+    }
 }

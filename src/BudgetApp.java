@@ -1,5 +1,6 @@
 import java.util.List;
-import java.util.ArrayList; // ✅ added
+import java.util.ArrayList; 
+import java.util.Collections;
 import java.util.Scanner;
 
 public class BudgetApp {
@@ -35,10 +36,21 @@ public class BudgetApp {
             categories.add(bc);
         }
 
+        Collections.sort(categories, Collections.reverseOrder());
+
         //print after loop
-        for (BudgetCategory bc : categories) {
+        for (BudgetCategory bc : categories) 
+         {
             System.out.println(bc);
+
         }
+
+
+    for (BudgetCategory bc : categories) 
+    {
+        
+    System.out.println("Difference: $" + bc.budgetDifference());
+    }
     }
 
 
